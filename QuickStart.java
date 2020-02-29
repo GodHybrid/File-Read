@@ -33,10 +33,10 @@ public class QuickStart {
         while(i.hasNext())
         {
             Map.Entry<String, Integer> me = (Map.Entry<String, Integer>)i.next();
-            if(me.getValue() != last && last > 0) break;
+            if(me.getValue() != last && last > 0) break; //COMMENT THIS LINE TO GET THE ENTIRE LIST OF WORDS
+            last = me.getValue();
             System.out.print(me.getKey() + " -- ");
             System.out.println(me.getValue());
-            last = me.getValue();
         }
     }
 }
