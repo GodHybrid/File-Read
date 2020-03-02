@@ -1,3 +1,4 @@
+import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -21,7 +22,7 @@ public class TextReader {
         this.path = Paths.get(path);
     }
 
-    public HashMap<String, Integer> ReadFile() 
+    public HashMap<String, Integer> ReadFile() throws FileNotFoundException 
     {
         String content;
         try 
@@ -48,7 +49,7 @@ public class TextReader {
         return sortByValues(mappedContent);
     }
     
-    public static <K, V extends Comparable<V>> Map<K, V> sortByValues(final Map<K, V> map) 
+    private static <K, V extends Comparable<V>> Map<K, V> sortByValues(final Map<K, V> map) 
     {
         Comparator<K> valueComparator = new Comparator<K>() 
         {
